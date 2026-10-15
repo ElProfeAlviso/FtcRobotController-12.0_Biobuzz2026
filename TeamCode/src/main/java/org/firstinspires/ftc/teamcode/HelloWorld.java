@@ -8,7 +8,7 @@ public class HelloWorld extends OpMode {
 
     @Override
     public void init() {
-        telemetry.addData("Hello", "world");
+        telemetry.addData("Hello", "Soy luz desde mi branch");
     }
 
     @Override
