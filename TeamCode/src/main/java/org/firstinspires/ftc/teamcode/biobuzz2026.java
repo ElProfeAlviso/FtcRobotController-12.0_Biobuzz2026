@@ -15,6 +15,10 @@ public class biobuzz2026 extends OpMode {
 
     @Override
     public void init() {
+        //Realizamos la configuracion en github: El profe tiene el proyecto principal y los demas pedimos permiso
+        //Para trabajar en nuestras propias ramas y subir cambios juntos.
+
+
         // Configuración de motores del chasis (Tanque)
         leftDrive = hardwareMap.get(DcMotor.class, "leftDrive");
         rightDrive = hardwareMap.get(DcMotor.class, "rightDrive");
