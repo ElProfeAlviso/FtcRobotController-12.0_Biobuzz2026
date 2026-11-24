@@ -35,12 +35,12 @@ public class biobuzz2026 extends OpMode {
     private Servo leftPivot;
     private Servo rightPivot;
 
-    private double intakePower = 0.8;
-    private double indexerPower = 0.95;
+    private final double intakePower = 0.8;
+    private final double indexerPower = 0.95;
 
-    private double indexerLowPower = 0.6;
-    private double turretPower = 0.8;
-    private double shooterPower = 1450;
+    private final double indexerLowPower = 0.6;
+    private final double turretPower = 0.8;
+    private final double shooterPower = 1450;
 
     // Estado para alternar (toggle) los servos pivot con el botón triángulo
     private boolean pivotActive = false;
@@ -142,11 +142,11 @@ public class biobuzz2026 extends OpMode {
         if (gamepad1.dpad_up) {
             setTurretAngleDegrees(0.0);
         } else if (gamepad1.dpad_right) {
-            setTurretAngleDegrees(60.0);
+            setTurretAngleDegrees(-80.0);
         } else if (gamepad1.dpad_down) {
             setTurretAngleDegrees(0);
         } else if (gamepad1.dpad_left) {
-            setTurretAngleDegrees(-80.0);
+            setTurretAngleDegrees(80.0);
         }
 
         // Control del Shooter: cuadrado para encender, círculo para apagar
@@ -158,8 +158,8 @@ public class biobuzz2026 extends OpMode {
             shooterRight.setPower(0.0);
         }
 
-       /* // Control de alternancia (toggle) para los servos Pivot con el botón Triángulo (triangle)
-        boolean trianglePressedCurrent = gamepad1.triangle;
+        // Control de alternancia (toggle) para los servos Pivot con el botón Cuadrado (Square)
+        boolean trianglePressedCurrent = gamepad1.square;
         if (trianglePressedCurrent && !trianglePressedLast) {
             pivotActive = !pivotActive; // Cambia de activo a inactivo y viceversa
         }
@@ -172,7 +172,7 @@ public class biobuzz2026 extends OpMode {
         } else {
             leftPivot.setPosition(PIVOT_INACTIVE_POS);
             rightPivot.setPosition(PIVOT_INACTIVE_POS);
-        }*/
+        }
 
         // Telemetría en la Driver Station
         telemetry.addData("Left Drive Power", leftPower);
