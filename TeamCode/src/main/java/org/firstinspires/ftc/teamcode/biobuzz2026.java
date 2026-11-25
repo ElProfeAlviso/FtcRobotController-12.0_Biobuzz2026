@@ -153,7 +153,10 @@ public class biobuzz2026 extends OpMode {
         if (gamepad1.triangle) {
             shooterLeft.setVelocity(shooterPower);
             shooterRight.setVelocity(shooterPower);
-        } else if (gamepad1.circle) {
+        } else if (gamepad1.ps) {
+            shooterLeft.setPower(-shooterPower);
+            shooterRight.setPower(-shooterPower);
+        }else if (gamepad1.circle){
             shooterLeft.setPower(0.0);
             shooterRight.setPower(0.0);
         }
@@ -173,6 +176,8 @@ public class biobuzz2026 extends OpMode {
             leftPivot.setPosition(PIVOT_INACTIVE_POS);
             rightPivot.setPosition(PIVOT_INACTIVE_POS);
         }
+
+
 
         // Telemetría en la Driver Station
         telemetry.addData("Left Drive Power", leftPower);
