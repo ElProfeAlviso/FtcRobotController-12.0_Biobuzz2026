@@ -15,10 +15,10 @@ import org.firstinspires.ftc.robotcore.external.navigation.AxesReference;
 import org.firstinspires.ftc.robotcore.external.navigation.Orientation;
 
 
-@Autonomous(name="Avanza y tira", group="Autos",preselectTeleOp="TitaniumRamsRegional")
+@Autonomous(name="Avanza y Estaciona Hive Bajo", group="Autos",preselectTeleOp="TitaniumRamsRegional")
 
 //Clase principal del programa (IMU utilizado modelo:
-public class AutonomoBase extends LinearOpMode {
+public class AvanzaEstaciona extends LinearOpMode {
 
     // Declarar los objetos de motores
     private DcMotor leftDrive = null;
@@ -158,17 +158,8 @@ public class AutonomoBase extends LinearOpMode {
         //===================SECUENCIA DE COMANDOS AUTONOMOS====================================
 
         Adelante(30, 0.7, 1000);
-        shooterON(1000);
-        indexerOn(1000);
-        indexerOff(1000);
-        indexerOn(1000);
-        indexerOff(1000);
-        intakeOn(100);
-        indexerOn(100);
-        sleep(2000);
-        shooterOff(100);
-        indexerOff(100);
-        intakeOff(100);
+       girarDerecha(70,0.7,1000);
+        Adelante(60, 0.7, 1000);
 
 
 
@@ -328,6 +319,15 @@ public class AutonomoBase extends LinearOpMode {
 
 
         sleep(sleep);
+    }
+
+    private void indexerBack(long sleep){
+
+        indexer.setPower(indexerPower);
+
+
+        sleep(sleep);
+
     }
 
     private void intakeOn (long sleep){

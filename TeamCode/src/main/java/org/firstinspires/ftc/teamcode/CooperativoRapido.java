@@ -15,10 +15,10 @@ import org.firstinspires.ftc.robotcore.external.navigation.AxesReference;
 import org.firstinspires.ftc.robotcore.external.navigation.Orientation;
 
 
-@Autonomous(name="Avanza y estaciona", group="Autos",preselectTeleOp="TitaniumRamsRegional")
+@Autonomous(name="Cooperativo 8 segundos", group="Autos",preselectTeleOp="TitaniumRamsRegional")
 
 //Clase principal del programa (IMU utilizado modelo:
-public class AutoRojo extends LinearOpMode {
+public class CooperativoRapido extends LinearOpMode {
 
     // Declarar los objetos de motores
     private DcMotor leftDrive = null;
@@ -157,26 +157,23 @@ public class AutoRojo extends LinearOpMode {
 
         //===================SECUENCIA DE COMANDOS AUTONOMOS====================================
 
-        Adelante(30, 0.7, 1000);
+        Adelante(39, 0.7, 8000);
         shooterON(1000);
         indexerOn(1000);
         indexerOff(1000);
+        indexerBack(300);
         indexerOn(1000);
         indexerOff(1000);
+        indexerBack(300);
         intakeOn(100);
         indexerOn(100);
-        sleep(2000);
+        sleep(2500);
         shooterOff(100);
         indexerOff(100);
         intakeOff(100);
 
-        girarIzquierda(70, 0.7, 1000);
-        Adelante(40, 0.7, 1000);
-        girarDerecha(75, 0.7, 1000);
-        Adelante(95, 0.7, 1000);
-        girarIzquierda(70,0.7,1000);
-        Adelante(25,0.7,1000);
-
+        girarDerecha(75,0.7,1000);
+        Adelante(60, 0.7, 1000);
 
 
 
@@ -335,6 +332,15 @@ public class AutoRojo extends LinearOpMode {
 
 
         sleep(sleep);
+    }
+
+    private void indexerBack(long sleep){
+
+        indexer.setPower(indexerPower);
+
+
+        sleep(sleep);
+
     }
 
     private void intakeOn (long sleep){

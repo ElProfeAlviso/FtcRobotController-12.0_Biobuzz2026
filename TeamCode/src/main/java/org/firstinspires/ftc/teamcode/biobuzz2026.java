@@ -8,7 +8,7 @@ import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.Range;
 
-@TeleOp(name = "biobuzz2026", group = "Iterative Opmode")
+@TeleOp(name = "Teleop biobuzz2026", group = "Iterative Opmode")
 public class biobuzz2026 extends OpMode {
 
     // Configuración para torreta de 360° con motor REV NEO (550)
@@ -40,7 +40,7 @@ public class biobuzz2026 extends OpMode {
 
     private final double indexerLowPower = 0.6;
     private final double turretPower = 0.8;
-    private final double shooterPower = 1450;
+    private final double shooterPower = 1400;
 
     // Estado para alternar (toggle) los servos pivot con el botón triángulo
     private boolean pivotActive = false;
